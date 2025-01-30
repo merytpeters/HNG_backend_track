@@ -7,7 +7,7 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/userinfo",
       "dest": "stage0/main.py"
     }
   ]
