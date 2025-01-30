@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from datetime import datetime
+from mangum import Mangum
 
 
 app = FastAPI()
@@ -16,3 +17,5 @@ def userInfo(
         "current_datetime": datetime.now().isoformat(),
         "github_url": githuburl
     }
+
+handler = Mangum(app)
