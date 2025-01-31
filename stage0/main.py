@@ -14,7 +14,7 @@ def userInfo(
     """public api to display required info"""
     return {
         "email":   email,
-        "current_datetime":   datetime.now().isoformat(),
+        "current_datetime":   datetime.now().isoformat(timespec='seconds') + "Z",
         "github_url":   githuburl
     }
 
