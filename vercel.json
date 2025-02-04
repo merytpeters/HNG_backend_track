@@ -1,15 +1,11 @@
 {
   "builds": [
-    {
-      "src": "stage0/main.py",
-      "use": "@vercel/python"
-    }
+    {"src": "stage0/main.py", "use": "@vercel/python"},
+    {"src": "stage1/main.py", "use": "@vercel/python"}
   ],
   "routes": [
-    {
-      "src": "/userinfo",
-      "dest": "stage0/main.py"
-    }
+    { "src": "/userinfo", "dest": "stage0/main.py"},
+    { "src": "/api/classify-number", "dest": "stage1/main.py"}
   ]
 }
   

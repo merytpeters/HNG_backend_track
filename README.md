@@ -37,3 +37,14 @@ This folder contains a public API that displays my email, the current date and t
     fastapi dev main.py
     ```
 6. Check it out here https://hng-backend-track.vercel.app/userinfo
+
+## Stage one
+
+### Number classification api
+
+### Setup 
+Similar to stage 0
+
+or
+
+visit : 
