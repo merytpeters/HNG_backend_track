@@ -28,6 +28,6 @@ A public api that classifies and displays the properties of different numbers
     ```
     Or
     ```sh
-    cd stage1
+    cd stage1/api
     fastapi dev main.py
     ```
