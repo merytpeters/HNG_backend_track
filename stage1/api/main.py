@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 from number import ClassifyNumber
 
@@ -27,7 +27,7 @@ def api():
 
 
 @app.get("/api/classify-number")
-def clasify_number(number: int):
+def clasify_number(number: int = Query(..., description="Number to classify")):
     """public api to display number properties"""
     try:
         number = int(number)
