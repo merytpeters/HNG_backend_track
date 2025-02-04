@@ -27,14 +27,14 @@ def api():
 
 
 @app.get("/api/classify-number")
-def clasify_number(number: int = Query(..., description="Number to classify")):
+async def clasify_number(number: int = Query(..., description="Number to classify")):
     """public api to display number properties"""
     try:
         number = int(number)
         is_prime = classifier.is_prime(number)
         is_perfect = classifier.is_perfect(number)
         digit_sum = classifier.digit_sum(number)
-        fun_fact = classifier.fun_fact(number)
+        fun_fact = await classifier.fun_fact(number)
         number_check = classifier.is_armstrong(number)
         numb_check = classifier.is_odd_or_even(number)
         properties = []
@@ -54,7 +54,7 @@ def clasify_number(number: int = Query(..., description="Number to classify")):
             "digit_sum": digit_sum,
             "fun_fact": fun_fact
         }
-    except Exception:
+    except Exception as e:
         return {
             "number": "alphabet",
             "error": True
