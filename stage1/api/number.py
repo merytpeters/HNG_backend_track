@@ -19,6 +19,8 @@ class ClassifyNumber:
 
     def is_perfect(self, num):
         """Perfect number is a number whose divisor sums up to it"""
+        if num <= 1:
+            return False
         total = 0
         for i in range(1, num):
             if (num % i == 0):
@@ -50,8 +52,11 @@ class ClassifyNumber:
 
     def fun_fact(self, num):
         """Calls numbersapi math type and checks if it's an Armstrong number"""
-        response = requests.get(f"http://numbersapi.com/{num}/math")
-        if response.status_code == 200:
-            return response.text
-        else:
-            return "Could not retrieve fun fact"
+        try:
+            response = requests.get(f"http://numbersapi.com/{num}/math")
+            if response.status_code == 200:
+                return response.text
+            else:
+                return "Could not retrieve fun fact"
+        except requests.exceptions.RequestException:
+            return "Error retrieving fun fact"
