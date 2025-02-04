@@ -47,4 +47,4 @@ Similar to stage 0
 
 or
 
-visit : 
+visit : https://hng-backend-track.vercel.app/api/classify-number?number=371 (number can be changed)

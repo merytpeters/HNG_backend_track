@@ -6,22 +6,19 @@ from number import ClassifyNumber
 app = FastAPI()
 classifier = ClassifyNumber()
 
-origins = [
-    "http://localhost",
-    "http://localhost:8000",
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+
 @app.get("/api")
 def api():
     return {"message": "Welcome Home"}
+
 
 @app.get("/api/classify-number")
 def clasify_number(number: int):

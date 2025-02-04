@@ -1,7 +1,7 @@
-import requests
-
 #!/usr/bin/env python3
 """Number Classification"""
+import requests
+
 
 class ClassifyNumber:
     """Function that defines properties of a number"""
@@ -16,7 +16,7 @@ class ClassifyNumber:
             if num % i == 0:
                 return False
         return True
-    
+
     def is_perfect(self, num):
         """Perfect number is a number whose divisor sums up to it"""
         total = 0
@@ -24,29 +24,30 @@ class ClassifyNumber:
             if (num % i == 0):
                 total += i
         return total == num
-    
+
     def digit_sum(self, num):
         """Check the sum of its digit"""
         total = 0
         for digit in str(num):
             total += int(digit)
         return total
-    
+
     def is_armstrong(self, num):
-        """A number equal to the sum of its digit raise to the number of digits"""
+        """A number equal to the sum of its
+        digit raise to the number of digits"""
         num_of_digits = len(str(num))
         total = 0
         for digit in str(num):
             digit = int(digit) ** num_of_digits
             total += digit
         return total == num
-    
+
     def is_odd_or_even(self, num):
         """Checks odd or even numbers"""
         if num % 2 == 0:
             return "even"
         return "odd"
-    
+
     def fun_fact(self, num):
         """Calls numbersapi math type and checks if it's an Armstrong number"""
         response = requests.get(f"http://numbersapi.com/{num}/math")
@@ -54,7 +55,6 @@ class ClassifyNumber:
             return response.text
         else:
             return "Could not retrieve fun fact"
-        
 
 
 if __name__ == "__main__":
