@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
-from number import ClassifyNumber
+from stage1.api.number import ClassifyNumber
 
 
 app = FastAPI()
