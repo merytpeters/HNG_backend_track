@@ -30,6 +30,7 @@ def api():
 def clasify_number(number: int):
     """public api to display number properties"""
     try:
+        number = int(number)
         is_prime = classifier.is_prime(number)
         is_perfect = classifier.is_perfect(number)
         digit_sum = classifier.digit_sum(number)

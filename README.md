@@ -29,7 +29,7 @@ This folder contains a public API that displays my email, the current date and t
     ```
 5. Run the application locally using FastAPI:
     ```sh
-    uvicorn main:app --reload
+    uvicorn main:app
     ```
     Or
     ```sh
