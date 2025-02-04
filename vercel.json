@@ -1,11 +1,15 @@
 {
   "builds": [
     {"src": "stage0/main.py", "use": "@vercel/python"},
-    {"src": "stage1/main.py", "use": "@vercel/python"}
+    {"src": "stage1/api/main.py", "use": "@vercel/python"}
   ],
   "routes": [
     { "src": "/userinfo", "dest": "stage0/main.py"},
-    { "src": "/api/classify-number", "dest": "stage1/main.py"}
-  ]
+    { "src": "/api/classify-number", "dest": "stage1/api/main.py"}
+  ],
+  "functions": {
+    "stage1/api/main.py": {
+      "includeFiles": ["stage1/api/number.py"]
+    }
+  }
 }
-  
