@@ -5,11 +5,7 @@
   ],
   "routes": [
     { "src": "/userinfo", "dest": "stage0/main.py"},
+    { "src": "/api", "dest": "stage1/api/main.py"},
     { "src": "/api/classify-number", "dest": "stage1/api/main.py"}
-  ],
-  "functions": {
-    "stage1/api/main.py": {
-      "includeFiles": ["stage1/api/number.py"]
-    }
-  }
+  ]
 }

@@ -55,14 +55,3 @@ class ClassifyNumber:
             return response.text
         else:
             return "Could not retrieve fun fact"
-
-
-if __name__ == "__main__":
-    number = 371
-    classifier = ClassifyNumber()
-    print(classifier.is_prime(number))
-    print(classifier.is_perfect(number))
-    print(classifier.is_armstrong(number))
-    print(classifier.is_odd_or_even(number))
-    print(classifier.fun_fact(number))
-    print(classifier.digit_sum(number))

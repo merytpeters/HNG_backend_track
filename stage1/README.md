@@ -24,10 +24,5 @@ A public api that classifies and displays the properties of different numbers
     ```
 5. Run the application locally using FastAPI:
     ```sh
-    uvicorn main:app --reload
-    ```
-    Or
-    ```sh
-    cd stage1/api
-    fastapi dev main.py
+    uvicorn main:app
     ```
