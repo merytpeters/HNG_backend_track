@@ -30,13 +30,16 @@ class ClassifyNumber:
     def digit_sum(self, num):
         """Check the sum of its digit"""
         total = 0
-        for digit in str(num):
-            total += int(digit)
+        if num:
+            for digit in str(abs(num)):
+                total += int(digit)
         return total
 
     def is_armstrong(self, num):
         """A number equal to the sum of its
         digit raise to the number of digits"""
+        if num < 0:
+            return
         num_of_digits = len(str(num))
         total = 0
         for digit in str(num):
@@ -46,7 +49,7 @@ class ClassifyNumber:
 
     def is_odd_or_even(self, num):
         """Checks odd or even numbers"""
-        if num % 2 == 0:
+        if abs(num) % 2 == 0:
             return "even"
         return "odd"
 
